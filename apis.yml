@@ -1,7 +1,23 @@
 aid: sverve
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sverve.png
 name: Sverve
-description: Sverve is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Sverve was surfaced as a portfolio company of 500 Global and added to the API Evangelist
+  network as a stub. During the enrichment pass the company's website (sverve.com) was offline — the
+  origin returned HTTP 522 behind Cloudflare, and its DNS (NameBright registrar-parking MX/SPF and a
+  "comingsoon.namebright.com" DMARC target) indicates the domain is parked and the company appears
+  inactive. No developer portal, documentation, OpenAPI, or public API surface could be found, so there
+  is nothing to enrich beyond a probed domain-security record. Left as an inactive lead.
 url: https://raw.githubusercontent.com/api-evangelist/sverve/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +25,16 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: inactive-domain-parked
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Portfolio Lead
+- 500 Global
+- Inactive
+- Influencer Marketing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +42,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/sverve-domain-security.yml
 - type: Website
   url: https://sverve.com
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
